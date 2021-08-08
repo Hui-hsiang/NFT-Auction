@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
     <title>NFT Auction</title>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <style>
+        .row {
+            --bs-gutter-x: 0 !important;
+        }
+        .col-md-4 {
+            padding: 0;
+        }
+        .VC {
+            display:  flex;
+            align-items: center;
+        }
+        .HC {
+            display:  flex;
+            justify-content: center;
+        }
+    </style>
 </head>
-
 <body>
-    <div class="container">
-        
-        <div id="head" style="background-color: rgb(206, 206, 206);">
-            <div class="row">
-                <div class="col-md-4">.<img src="..." alt="label"></div>
-                <div class="col-md-4"><h1>NFT Auction</h1></div>
-                <div class="col-md-4"><img style= "float: right" src="" alt="wallet"></div>
-            </div>
-            
-            
+    <div class="container m-0 p-0" style="width: 100vw; height: 100vh;">
+        <div id="head" class="row VC" style="background-color: rgb(229,229,229); width: 100vw; height: 15vh;">
+            <div class="col-md-4" style="padding-left: 3vw;"><img src="https://i.imgur.com/QBpwS3W.png"></div>
+            <div class="col-md-4" style="text-align: center"><font size="10vw"><b>NFT&nbsp;&nbsp;Auction</b></font></div>
+            <div class="col-md-4" style="padding-right: 3vw;"><img style="float: right" src="https://i.imgur.com/8KDnaVz.png" onclick="wallet()"></div>
         </div>
-        
-    
-        <div id="content" style="background-color: rgb(185, 185, 185);">
+        <div id="content" style="background-color: rgb(214,211,211); width: 100vw; height: 85vh;">
             <div class="row">
-                <div class="col-md-4">
-                    
+                <div class="col-md-4 VC HC" style="height: 85vh;"> 
+                    <div class="row">
+                        <div class="col">
+                            <font size="6rem">
+                                <b>NEWSEST&nbsp;5&nbsp;Transaction</b>
+                            </font>
+                        </div>
+                        <div class="w-100"></div>
+                        <div +style="padding-top: 1rem;">
+                            4444444444444444444444444
+                        </div> 
+                    </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 VC HC">
                     <div class = "row">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail">
@@ -91,11 +110,10 @@
                 </div>
             </div>
         </div>
-        
     </div>
-
+    <script>
+        function wallet(){
+            alert("click wallet");
+        }
+    </script>
 </body>
-
-
-
-
