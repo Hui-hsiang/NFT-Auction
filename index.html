@@ -1,134 +1,193 @@
 <!DOCTYPE html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
-    <title>NFT Auction</title>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <style>
-        .row {
-            --bs-gutter-x: 0 !important;
-        }
-        .col-md-4 {
-            padding: 0;
-        }
-        .VC {
-            display:  flex;
-            align-items: center;
-        }
-        .HC {
-            display:  flex;
-            justify-content: center;
-        }
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
+        <title>NFT Auction</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <style>
+            .row {
+                --bs-gutter-x: 0 !important;
+            }
+            .col-md-4 {
+                padding: 0;
+            }
+            .VC {
+                display:  flex;
+                align-items: center;
+            }
+            .HC {
+                display:  flex;
+                justify-content: center;
+            }
 
-        .bid {
-            width: 250px;
-            height: 50px;
-            font-size: 1.5rem;
-            background-color: blueviolet;
-            border-color: blueviolet;
-        }
+            .transactionItem {
+                background-color: white;
+                width: 20vw;
+                height: 6vh;
+                display: inline-block;
+                margin-left: 0.5rem;
+                padding-left: 0.5rem;
+            }
 
-        h3 {
-            padding-top: 1rem;
-            margin-bottom: 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="container m-0 p-0" style="width: 100vw; height: 100vh;">
-        <div id="head" class="row VC" style="background-color: rgb(229,229,229); width: 100vw; height: 15vh;">
-            <div class="col-md-4" style="padding-left: 3vw;"><img src="static/source/logos.png"></div>
-            <div class="col-md-4" style="text-align: center"><font size="10vw"><b>NFT&nbsp;&nbsp;Auction</b></font></div>
-            <div class="col-md-4" style="padding-right: 3vw;"><img style="float: right" src="static/source/logo_wallet.png" onclick="wallet()"></div>
-        </div>
-        <div id="content" style="background-color: rgb(214,211,211); width: 100vw; height: 85vh;">
-            <div class="row">
-                <div class="col-md-4 VC HC" style="height: 85vh;"> 
-                    <div class="row" style="padding-left: 3rem;">
-                        <div class="col">
-                            <font size="6rem">
-                                <b>NEWSEST&nbsp;5&nbsp;Transaction</b>
-                            </font>
+            .bidItemPic {
+                object-fit: scale-down;
+                background-color: beige;
+                border-radius: 0.7rem;
+            }
+
+            .bid {
+                width: 250px;
+                height: 50px;
+                font-size: 1.5rem;
+                background-color: blueviolet;
+                border-color: blueviolet;
+                border-radius: 0.7rem;
+            }
+
+            h3 {
+                padding-top: 1rem;
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container m-0 p-0" style="width: 100vw;">
+            <div id="head" class="row VC" style="background-color: rgb(229,229,229); width: 100vw; height: 15vh;">
+                <div class="col-md-4" style="padding-left: 3vw;"><img src="static/source/logos.png"></div>
+                <div class="col-md-4" style="text-align: center"><font size="10vw"><b>NFT&nbsp;&nbsp;Auction</b></font></div>
+                <div class="col-md-4" style="padding-right: 3vw;"><img style="float: right" src="static/source/logo_wallet.png" onclick="wallet()"></div>
+            </div>
+            <div id="content" style="background-color: rgb(214,211,211); width: 100vw; min-height: 85vh;">
+                <div class="row">
+                    <div class="col-md-4 VC HC"> 
+                        <div class="row" style="padding-left: 3rem;">
+                            <div class="col">
+                                <font size="6rem">
+                                    <b>NEWSEST&nbsp;5&nbsp;Transaction</b>
+                                </font>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="VC" style="padding-top: 1rem;">
+                                <div style="display: inline-block;">
+                                    <img src="static/source/hammer.png" width="50rem" height="50rem">
+                                </div>
+                                <div class="transactionItem">
+                                    cfx address: #0X0012<br>has won the bid NFT ID IS 359910
+                                </div>
+                            </div> 
+                            <div class="w-100"></div>
+                            <div class="VC" style="padding-top: 1rem;">
+                                <div style="display: inline-block;">
+                                    <img src="static/source/hammer.png" width="50rem" height="50rem">
+                                </div>
+                                <div class="transactionItem">
+                                    cfx address: #0X0013<br>has won the bid NFT ID IS 359910
+                                </div>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="VC" style="padding-top: 1rem;">
+                                <div style="display: inline-block;">
+                                    <img src="static/source/hammer.png" width="50rem" height="50rem">
+                                </div>
+                                <div class="transactionItem">
+                                    cfx address: #0X0014<br>has won the bid NFT ID IS 359910
+                                </div>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="VC" style="padding-top: 1rem;">
+                                <div style="display: inline-block;">
+                                    <img src="static/source/bid.png" width="50rem" height="50rem">
+                                </div>
+                                <div class="transactionItem">
+                                    cfx address: #0X0012<br>place the bid on NFT ID 359910
+                                </div>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="VC" style="padding-top: 1rem;">
+                                <div style="display: inline-block;">
+                                    <img src="static/source/bid.png" width="50rem" height="50rem">
+                                </div>
+                                <div class="transactionItem">
+                                    cfx address: #0X0016<br>place the bid on NFT ID 359910
+                                </div>
+                            </div>
                         </div>
-                        <div class="w-100"></div>
-                        <div +style="padding-top: 1rem;">
-                            4444444444444444444444444
-                        </div> 
                     </div>
-                </div>
-                <div class="col-md-8 VC HC">
-                    <div class = "row">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                            <img src="static/source/test1.jpg" width="300px" height="200px" style="object-fit: scale-down; background-color: beige;">
-                            <div class="caption">
-                                <h3>The Game | Steven Miller</h3>
-                                <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
-                                <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
+                    <div class="col-md-8 VC HC" style="padding-top: 2rem;">
+                        <div class = "row">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                <img src="static/source/test1.jpg" width="300px" height="200px" class="bidItemPic">
+                                <div class="caption">
+                                    <h3>The Game | Steven Miller</h3>
+                                    <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
+                                    <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
+                                </div>
+                                </div>
                             </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                <img src="static/source/test2.jpg" width="300px" height="200px" class="bidItemPic">
+                                <div class="caption">
+                                    <h3>The Game | Steven Miller</h3>
+                                    <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
+                                    <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
+                                </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                            <img src="static/source/test2.jpg" width="300px" height="200px" style="object-fit: scale-down; background-color: beige;">
-                            <div class="caption">
-                                <h3>The Game | Steven Miller</h3>
-                                <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
-                                <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                <img src="static/source/test3.jpg" width="300px" height="200px" class="bidItemPic">
+                                <div class="caption">
+                                    <h3>The Game | Steven Miller</h3>
+                                    <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
+                                    <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
+                                </div>
+                                </div>
                             </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                <img src="static/source/test1.jpg" width="300px" height="200px" class="bidItemPic">
+                                <div class="caption">
+                                    <h3>The Game | Steven Miller</h3>
+                                    <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
+                                    <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
+                                </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                            <img src="static/source/test3.jpg" width="300px" height="200px" style="object-fit: scale-down; background-color: beige;">
-                            <div class="caption">
-                                <h3>The Game | Steven Miller</h3>
-                                <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
-                                <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                <img src="static/source/test2.jpg" width="300px" height="200px" class="bidItemPic">
+                                <div class="caption">
+                                    <h3>The Game | Steven Miller</h3>
+                                    <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
+                                    <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
+                                </div>
+                                </div>
                             </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                            <img src="static/source/test1.jpg" width="300px" height="200px" style="object-fit: scale-down; background-color: beige;">
-                            <div class="caption">
-                                <h3>The Game | Steven Miller</h3>
-                                <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
-                                <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                            <img src="static/source/test2.jpg" width="300px" height="200px" style="object-fit: scale-down; background-color: beige;">
-                            <div class="caption">
-                                <h3>The Game | Steven Miller</h3>
-                                <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
-                                <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                            <img src="static/source/test3.jpg" width="300px" height="200px" style="object-fit: scale-down; background-color: beige;">
-                            <div class="caption">
-                                <h3>The Game | Steven Miller</h3>
-                                <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
-                                <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
-                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                <img src="static/source/test3.jpg" width="300px" height="200px" class="bidItemPic">
+                                <div class="caption">
+                                    <h3>The Game | Steven Miller</h3>
+                                    <p style="padding-top: 0.5rem; color: rgb(100, 100, 100 )">28-30 July 2021 | 12:00 Taiwan</p>
+                                    <p><a href="#" class="btn btn-primary VC HC bid" role="button">B&nbsp;I&nbsp;D</a></p>
+                                </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script>
-        function wallet(){
-            alert("click wallet");
-        }
-    </script>
-</body>
+        <script>
+            function wallet(){
+                alert("click wallet");
+            }
+        </script>
+    </body>
+</html>
