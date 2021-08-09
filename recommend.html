@@ -9,6 +9,9 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
             li {
                 list-style-type: none;
             }
@@ -26,12 +29,63 @@
                 display:  flex;
                 justify-content: center;
             }
-            .detail {
-                background-color: white;
-                margin-top: 1rem;
+            .cardContainer {
+                background-color: #ffff;
+                position: relative;
+                display: grid;
                 width: 80vw;
                 height: 25vh;
                 border-radius: 0.7rem;
+                box-shadow: 0 1vh 2vh rgb(0 0 0 / 36%);
+                margin: 0;
+                margin-top: 1rem;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .cardContainer img{
+                width: 25vh;
+                height: 25vh;
+                border-radius: 0.7rem 0 0 0.7rem;
+            }
+            .cardContainer_Text{
+                padding: 4vh 5vw 0;
+                margin:  0;
+                box-sizing: border-box;
+            }
+            .cardContainer_Text .cardContainer_Text_Detail{
+                position: absolute;
+                bottom: 7vh;
+                display: flex;
+                padding-bottom: 0.8rem;
+                font-size: 1rem;
+                color:rgb(136, 136, 136);
+                box-sizing: border-box;
+            }
+            .cardTitle {
+                overflow: hidden;
+                font-size: 2rem;
+                color: #000000;
+            }
+            .cardBtn{
+                position: absolute;
+                bottom: 2vh;
+                right: 5vw;
+                border: none;
+                outline: none;
+                display: flex;
+                align-items: center;
+                background-color: #604bd8;
+                color: #ffff;
+                padding: 2vw;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                border-radius: 5px;
+                cursor: pointer;
+                margin: 0;
+                box-sizing: border-box;
+                width: 14vw;
+                height: 7vh;
+                font-size: 1.3rem;
             }
         </style>
     </head>
@@ -46,32 +100,87 @@
                 <ul>
                     <li>
                         <div class="detail">
-                            666
+                            <div style="padding-bottom: 1vh">
+                                <div class="cardContainer" style="display: inline-flex;">
+                                    <img src="static/source/test3.jpg"/>
+                                    <div class="cardContainer_Text">
+                                        <h1 class="cardTitle">Artist Damien Hirst Set To Take On The NFT Market</h1>
+                                        <h1 class="cardContainer_Text_Detail">Estimated:&nbsp;90&nbsp;-&nbsp;200&nbsp;CFX</h1>
+                                        <h1 style="font-size: 1.2rem; margin-bottom: 0; position: absolute; bottom: 5vh;">CURRENT&nbsp;DIB:&nbsp;100&nbsp;CFX</h1>
+                                        <h1 style="font-size: 0.8rem; position: absolute; bottom: 2vh;">(6bids,&nbsp;reserve&nbsp;met)</h1>
+                                        <a class="btn btn-primary cardBtn HC" style="right: 20vw; background-color:rgb(136, 136, 136)" role="button" onclick="alert('save');">SAVE</a>
+                                        <a class="btn btn-primary cardBtn HC" role="button" onclick="alert('place bid');">Place&nbsp;Bid</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <div class="detail">
-                            666
+                            <div style="padding-bottom: 1vh">
+                                <div class="cardContainer" style="display: inline-flex;">
+                                    <img src="static/source/test1.jpg"/>
+                                    <div class="cardContainer_Text">
+                                        <h1 class="cardTitle">Artist Damien Hirst Set To Take On The NFT Market</h1>
+                                        <h1 class="cardContainer_Text_Detail">Estimated:&nbsp;90&nbsp;-&nbsp;200&nbsp;CFX</h1>
+                                        <h1 style="font-size: 1.2rem; margin-bottom: 0; position: absolute; bottom: 5vh;">CURRENT&nbsp;DIB:&nbsp;100&nbsp;CFX</h1>
+                                        <h1 style="font-size: 0.8rem; position: absolute; bottom: 2vh;">(6bids,&nbsp;reserve&nbsp;met)</h1>
+                                        <a class="btn btn-primary cardBtn HC" style="right: 20vw; background-color:rgb(136, 136, 136)" role="button" onclick="alert('save');">SAVE</a>
+                                        <a class="btn btn-primary cardBtn HC" role="button" onclick="alert('place bid');">Place&nbsp;Bid</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <div class="detail">
-                            666
+                            <div style="padding-bottom: 1vh">
+                                <div class="cardContainer" style="display: inline-flex;">
+                                    <img src="static/source/test2.jpg"/>
+                                    <div class="cardContainer_Text">
+                                        <h1 class="cardTitle">Artist Damien Hirst Set To Take On The NFT Market</h1>
+                                        <h1 class="cardContainer_Text_Detail">Estimated:&nbsp;90&nbsp;-&nbsp;200&nbsp;CFX</h1>
+                                        <h1 style="font-size: 1.2rem; margin-bottom: 0; position: absolute; bottom: 5vh;">CURRENT&nbsp;DIB:&nbsp;100&nbsp;CFX</h1>
+                                        <h1 style="font-size: 0.8rem; position: absolute; bottom: 2vh;">(6bids,&nbsp;reserve&nbsp;met)</h1>
+                                        <a class="btn btn-primary cardBtn HC" style="right: 20vw; background-color:rgb(136, 136, 136)" role="button" onclick="alert('save');">SAVE</a>
+                                        <a class="btn btn-primary cardBtn HC" role="button" onclick="alert('place bid');">Place&nbsp;Bid</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <div class="detail">
-                            666
+                            <div style="padding-bottom: 1vh">
+                                <div class="cardContainer" style="display: inline-flex;">
+                                    <img src="static/source/test4.jpg"/>
+                                    <div class="cardContainer_Text">
+                                        <h1 class="cardTitle">Artist Damien Hirst Set To Take On The NFT Market</h1>
+                                        <h1 class="cardContainer_Text_Detail">Estimated:&nbsp;90&nbsp;-&nbsp;200&nbsp;CFX</h1>
+                                        <h1 style="font-size: 1.2rem; margin-bottom: 0; position: absolute; bottom: 5vh;">CURRENT&nbsp;DIB:&nbsp;100&nbsp;CFX</h1>
+                                        <h1 style="font-size: 0.8rem; position: absolute; bottom: 2vh;">(6bids,&nbsp;reserve&nbsp;met)</h1>
+                                        <a class="btn btn-primary cardBtn HC" style="right: 20vw; background-color:rgb(136, 136, 136)" role="button" onclick="alert('save');">SAVE</a>
+                                        <a class="btn btn-primary cardBtn HC" role="button" onclick="alert('place bid');">Place&nbsp;Bid</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <div class="detail">
-                            666
-                        </div>
-                    </li>
-                    <li>
-                        <div class="detail">
-                            666
+                            <div style="padding-bottom: 1vh">
+                                <div class="cardContainer" style="display: inline-flex;">
+                                    <img src="static/source/test3.jpg"/>
+                                    <div class="cardContainer_Text">
+                                        <h1 class="cardTitle">Artist Damien Hirst Set To Take On The NFT Market</h1>
+                                        <h1 class="cardContainer_Text_Detail">Estimated:&nbsp;90&nbsp;-&nbsp;200&nbsp;CFX</h1>
+                                        <h1 style="font-size: 1.2rem; margin-bottom: 0; position: absolute; bottom: 5vh;">CURRENT&nbsp;DIB:&nbsp;100&nbsp;CFX</h1>
+                                        <h1 style="font-size: 0.8rem; position: absolute; bottom: 2vh;">(6bids,&nbsp;reserve&nbsp;met)</h1>
+                                        <a class="btn btn-primary cardBtn HC" style="right: 20vw; background-color:rgb(136, 136, 136)" role="button" onclick="alert('save');">SAVE</a>
+                                        <a class="btn btn-primary cardBtn HC" role="button" onclick="alert('place bid');">Place&nbsp;Bid</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                 </ul>
